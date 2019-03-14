@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:page="clr-namespace:App01_ControleXF"
+                  x:Class="App01_ControleXF.Menu.Master">
+    <MasterDetailPage.Master>
+        <!--Menu-->
+        <ContentPage Title="Menu">
+            
+            <ScrollView>
+                <StackLayout>
+                    <Button Text="Activity Indicator" Clicked="GoActivityPage"/>
+                    <Button Text="ProgressBar" Clicked="GoProgressBarPage"/>
+                    <Button Text="BowView" Clicked="GoBoxViewPage"/>
+                    <Button Text="Label" Clicked="GoLabePage"/>
+                    <Button Text="Botão" Clicked="GoButtonPage"/>
+                    <Button Text="Entry Editor" Clicked="GoEntryEditorPage"/>
+                    <Button Text="DatePiker" Clicked="GoDatePikerPage"/>
+                    <Button Text="TimePiker" Clicked="GoTimePikerPage"/>
+                    <Button Text="Piker" Clicked="GoPikerPage"/>
+                    <Button Text="SearchBar" Clicked="SearchBarPage"/>
+                    <Button Text="Slider Stepper" Clicked="SliderStepperPage"/>
+                    <Button Text="Switch" Clicked="SwitchPage"/>
+                    <Button Text="Image" Clicked="ImagePage"/>
+                    <Button Text="ListView" Clicked="ListViewPage"/>
+                    <Button Text="TableView" Clicked="TableViewPage"/>
+                    <Button Text="WebView" Clicked="WebViewPage"/>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <!--esta parte serve para apresentar a toolbar doo menu e o utilizador saber q tem um menu-->
+        <NavigationPage>
+            <x:Arguments>
+                <page:MainPage/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
