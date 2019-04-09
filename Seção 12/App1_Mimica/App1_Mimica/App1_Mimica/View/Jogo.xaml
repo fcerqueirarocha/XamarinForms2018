@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:conv="clr-namespace:App1_Mimica.View.Util"
+             x:Class="App1_Mimica.View.Jogo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:LabelPontuacaoConverter x:Key="ConvPontuacao"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="{Binding NomeGrupo}"/>
+                <Label Text="{Binding PalavraPontuacao, Converter={StaticResource ConvPontuacao}}"/>
+                <Label Text="{Binding Palavra}" HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Mostras" IsVisible="{Binding IsVisiblebtnMostrar}" Command="{Binding MostrarPalvra}"/>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsVisibleContainerContagem}">
+                <Label Text="{Binding TextoContagem}" FontSize="24" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="Segundos" HorizontalOptions="CenterAndExpand" />
+                
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Acertou" BackgroundColor="#00B22D" TextColor="White" Command="{Binding Acertou}"/>
+                    <Button Text="Erro" BackgroundColor="#FF4000" TextColor="White" Command="{Binding Errou}"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsVisibleContainerIniciar}">
+                <Button Text="Iniciar"  Command="{Binding Iniciar}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
